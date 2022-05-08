@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import useFetch from '../../hooks/useFetch';
 import WeatherBox from '../WeatherBox/WeatherBox';
 import './WeatherStrip.css';
 
-const WeatherStrip = () => {
-  const data = useFetch(5);
+const WeatherStrip = ({numDays}) => {
+  const data = useFetch(numDays);
   return (
     <div className='weather-strip-container'>
       {data && data.map((d, i) => (
